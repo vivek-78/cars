@@ -5,10 +5,12 @@ export default function CustomButton({
   handleClick,
   containerStyles,
   disabled,
+  btnType,
 }: CustomButtonProps) {
   return (
     <div>
       <button
+        type={btnType}
         disabled={false}
         onClick={handleClick}
         className={`custom-btn ${containerStyles}`}
