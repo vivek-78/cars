@@ -8,14 +8,13 @@ export default function NavBar() {
     <header className="w-full absolute z-10">
       <nav className="max-w-[1440px] mx-auto flex justify-between items-center">
         <Link href={"/"} className="flex items-center justify-center px-5">
-        <Image
-          src="/logo.svg"
-          alt="car hub logo"
-          className="object-contain"
-          width={118}
-          height={18}
-        />
-        
+          <Image
+            src="/logo.svg"
+            alt="car hub logo"
+            className="object-contain"
+            width={118}
+            height={18}
+          />
         </Link>
         <CustomButton
           title="Sign in"
