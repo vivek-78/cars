@@ -36,3 +36,25 @@ export interface CarDetailProps {
   isOpen: boolean;
   car: CarProps;
 }
+
+export interface FilterProps {
+  manufacturer?: string;
+  year?: number;
+  model?: string;
+  limit?: number;
+  fuel?: string;
+}
+
+export interface HomeProps {
+  searchParams: FilterProps;
+}
+
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
+}
