@@ -12,8 +12,8 @@ export interface CustomButtonProps {
 }
 
 export interface SearchManufatorerProps {
-  manufactorer: string;
-  setManufactorer: (manufactorer: string) => void;
+  manufacturer: string;
+  setManuFacturer: (manufactorer: string) => void;
 }
 
 export interface CarProps {
