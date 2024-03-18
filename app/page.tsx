@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Hero, SearchBar, CustomFilter, CarCard } from "@/components";
+import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
@@ -22,17 +22,23 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
         <div className="home__filters">
           <SearchBar />
-          <div className='home__filter-container'>
-            <CustomFilter title='fuel' options={fuels} />
-            <CustomFilter title='year' options={yearsOfProduction} />
+          <div className="home__filter-container">
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (
-          <section className="home__cars-wrapper">
-            {allCars.map((car) => (
-              <CarCard car={car}/>
-            ))}
-          </section>
+          <div>
+            <section className="home__cars-wrapper">
+              {allCars.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </section>
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
+          </div>
         ) : (
           <div className="home__error-container">{allCars?.message}</div>
         )}
